@@ -1,14 +1,13 @@
-# blog
 Im trying to use issues as a blog.
 
 ## Code
-Yes we can push the local md files then see this as a blog...
+Yes we can push the local md files then consider this as a blog... But it's too rough!
 
 ## Issues
-Blog articles. With strong support of labels.
+Post blog articles here, we can apply them with labels and into projects.
 
 ## Projects
-Can be used to do time management.
+Can be used as topics for issues; also suitable to do time management.
 
 ## Wiki
-1 blog page for a certain aim. Maybe can be used with index.
+like 1 single blog page(Maybe can be used with index?)
