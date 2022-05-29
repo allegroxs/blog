@@ -1,13 +1,13 @@
 Im trying to use issues as a blog.
 
 ## Code
-Yes we can push the local md files then consider this as a blog... But it's too rough!
+This part is used for version control... it's too wild for blog, although Issues is already quite wild:)
 
 ## Issues
-Post blog articles here, we can apply them with labels and into projects.
+When the first version of article is finished, post it here. Convenient to attach the article with Labels and into projects.
 
 ## Projects
-Can be used as topics for issues; also suitable to do time management.
+Can be used as topics for issues; also suitable to make a task list.
 
 ## Wiki
 like 1 single blog page(Maybe can be used with index?)
