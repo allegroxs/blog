@@ -1,4 +1,4 @@
-# Exam preparation
+# Digital IC exam preparation
 ## General
 - 三个Domain
   - Structural
@@ -136,29 +136,63 @@ removal time：复位信号中类似于同步时钟的hold time
 3. 可编程逻辑器件（Programmable Logic Device）
 属于ASIC的一个重要分支，是集成电路厂家作为一种通用性器件生产的半定制电路，用户可通过对器件编程实现所需要的逻辑功能。PLD是用户可配置的逻辑器件，成本较低，使用灵活，设计时发展非常迅速。
 
+## flow
 
+ASIC
+
+
+FPGA
 
 
 # Courses and labs
 ## IL2230 MLP
-1. Serial neuron
-   1. One-neuron design.Generic M × N MLP modeling (M layers, N neurons per layer) with one single neuron 
-unit (M, N are generic parameters). This means that the generic M × N MLP shall be modeled with a single neuron unit, and the control path takes care of the repetitive computation using the single neuron to achieve the desired functionality of the neural network. This is one extreme case of fully serial implementation at the neuron level.
-2. Semi neuron
-   1. N-neuron design. Generic M × N MLP modeling (M layers, N neurons per layer) with N neuron units (M, N are generic). This can be viewed as another extreme that uses a parallel architecture (as many per-layer neurons as needed). Still you need to consider how to re-use the one-layer neurons to implement the M layers of neuron computations
-3. parallel neuron
-4. Nonlinear function
+1. Serial-semi-parallel neuron
+   1. One-neuron design. Generic M × N MLP modeling (M layers, N neurons per layer) with one single neuron unit (M, N are generic parameters). The control path takes care of the repetitive computation using the single neuron to achieve the desired functionality of the neural network. This is one extreme case of fully serial implementation at the neuron level
+   2. Semi neuron: N-neuron design. Generic M × N MLP modeling (M layers, N neurons per layer) with N neuron units (M, N are generic). This can be viewed as another extreme that uses a parallel architecture (as many per-layer neurons as needed). Still you need to consider how to re-use the one-layer neurons to implement the M layers of neuron computations
+   3. parallel neuron
+2. Nonlinear function
    1. relu
    2. sigmoid: n-segments fitting
-5. DC_shell
+3. DC_shell
    1.  Wire_load_mode is top. 
    2.  Operating condition is NCCOM from tcbn90gtc.
+   3.  CTS
+   4.  Power optimization
+       1.  Clock gate
+       2.  Operand isolation
+
+synopsys_dc.setup
+
+```shell
+set SynopsysHome /afs/ict.kth.se/pkg/synopsys/designcompiler/J-2014.09
+set search_path "/afs/ict.kth.se/pkg/synopsys/designcompiler/J-2014.09/libraries/syn\
+                 /afs/it.kth.se/pkg/synopsys/extra_libraries/standard_cell/TSMC/tcbn90g_110a/Front_End/timing_power/tcbn90g_110a/"
+
+set cache_read  "/tmp"
+set cache_write "/tmp"
+
+#SYNTH VHDL FILE DEFAULTS
+set view_read_file_suffix    "db sdb edif sedif vhd vhdl st script"
+set view_analyze_file_suffix "v vhd vhdl"
+set template_parameter_style "%d"; # Limits the lenght of comp. names
+
+set link_path       ${search_path}
+set target_library  "tcbn90gtc.db"
+set symbol_library  "tcbn90g.sdb"
+
+set synthetic_library "standard.sldb\
+                       dw_foundation.sldb";
+set link_library      "* ${target_library}"
+
+define_design_lib WORK -path "./dc_work"
+```
 
 ## IL2203 Hardware description languages
+It is a CISC, *with* a microcontroller ROM.
 1. ALU
    1. Opcode
 2. Register File
-   1. Test: patterns like “1010101” followed by “0101010” also checks if the bits are leaking to their neighbors)
+   1. Test: patterns like “1010101” followed by “0101010” also checks if the bits are leaking to their neighbors
 3. Datapath
    1. Create a clock divider component. It should divide the 100 MHz clock on the board to an internal clock of approximately 1 Hz. The easiest way to achieve that is to make an incrementer (add 1), and use the MSB of it as the Clk output. 
    2.  add-1 test
@@ -166,11 +200,94 @@ unit (M, N are generic parameters). This means that the generic M × N MLP shall
    1. a Program Counter and a bypass mux for jump/branch instructions. The Program counter is either part of the registers in the register file (typically the last one), but it can also be a separate PC register, external to the register file. In our case, we will not be incrementing the PC externally, but use the last register (reg 7 in our case) for the PC
    2.  Microcontroller ROM for issuing microcode instructions
 5. cpu
-   1. Complete the Microcontroller FSM and add a R_Wn signal (or use two separate signals, RDEN and WREN) for controlling accesses to an external external memory. 
-   2. ROM.  We complete the **Microcontroller ROM** and include R/W_n signals to control reading/writing from/to external memories. 
-      1. Modelsim will convert your assembly program to hex-codes. Look on the RAM signal in the simulation window of Modelsim when you test the fake memory architecture, and write down the hex-codes in the memory.mif file. From now on, you should use the generated memory in your simulations so you get the memory latency right. 
-   3. We also build a **General Purpose IO** unit for writing data to LEDS, and write the **program (assembly code)** that should be stored in the external memory. We then build a **testbench** to run the system with the assembly code in it to test it
-   4. Finally, we download the Microcontroller component on the prototype FPGA board and verify that it works.
+   1. Complete the *Microcontroller FSM* and add a R_Wn signal (or use two separate signals, RDEN and WREN) for controlling accesses to an external external memory. 
+   2. ROM.  We complete the *Microcontroller ROM* and include R/W_n signals to control reading/writing from/to external memories. Modelsim will convert your assembly program to hex-codes. Look on the RAM signal in the simulation window of Modelsim when you test the fake memory architecture, and write down the hex-codes in the memory.mif file. From now on, you should use the generated memory in your simulations so you get the memory latency right. 
+   1. We also build a *General Purpose IO* unit for writing data to LEDS, and write the *program (assembly code)* that should be stored in the external memory. We then build a *testbench* to run the system with the assembly code in it to test it
+   2. Finally, we download the Microcontroller component on the prototype FPGA board and verify that it works.
 
 ## IL2225
+After doing the IL2230 lab, go on:
+
+
+# Embedded software
+# IL2206
+toy cruise control application using the DE2/DE-115 board.
+
+input:
+• Engine (ON/OFF). The engine is turned on, in case the signal ENGINE is active. The engine can only be turned off, if the speed of the car is 0
+• Cruise Control (ON/OFF). The cruise control is turned on, if
+  - the signal CRUISE_CONTROL is activated
+  - the car is in top gear (TOP_GEAR is active)
+  - the velocity is at least 20 m/s
+  - the signals GAS_PEDAL and BRAKE_PEDAL are inactive.
+• Gas Pedal (ON/OFF). The car shall accelerate, if the signal GAS_PEDAL is active. The cruise control shall be deactivated, if GAS_PEDAL is active.
+• Brake (ON/OFF). The car shall brake, when the signal BRAKE is active. Also the cruise control shall be deactivated, if the signal BRAKE is activated.
+• Gear (HIGH/LOW). The car has two different gear positions (high, low) indicated by the signal TOP_GEAR. If TOP_GEAR is active then the gear position is high, otherwise low. The cruise control is deactivated, when the gear position is moved to low.
+
+In the skeleton program, the control task uses a constant throttle of 40. The task VehicleTask
+implements the behavior of the car and its functionality shall not be changed
+during this laboratory. The only permitted code modification in VehicleTask
+is the replacement of the timer (see Task 4.2).
+
+- Use Soft Timers to Implement Periodic Tasks
+  - The skeleton program uses the statement `OSTimeDlyHMSM` to implement periodic tasks, which will not give an exact period. 
+  - `OSTmrCreate` in µC/OS-II Reference Manual, Chapter 16.
+  - I/O-Tasks: 
+    - Create the tasks ButtonIO and SwitchIO, which read the buttons and switches on the DE2-board periodically. 
+    - The task SwitchIO creates the signals ENGINE and TOP_GEAR
+    - the task ButtonIO creates the signals CRUISE_CONTROL, GAS_PEDAL and BRAKE_PEDAL.
+  - Control Law:
+     -  Implement the control law in the ControlTask so that it fulfills the specification from Section 4. Note that the braking functionality is implemented inside the VehicleTask and requires a message to be sent, whereas the ControlTask sets the throttle. For this example, the toy car has some hardwired safeguard circuitry which disables the car’s throttle whenever the brakes are activated. Furthermore, you can assume that the dynamics of the car is of a simple mass moving through the profile given subject to linear wind resistance.
+     -  The control law shall react according to the state of the buttons and switches. When the cruise control is activated, the current velocity shall be maintained with a maximum deviation of
+  - Watchdog
+    - a watchdog task and an overload detection task 
+    - The overload detection task shall report to the watchdog with an ’OK’ signal, when there is no overload condition, i.e. the system’s utilisation is less than 100%. 
+    - In case the watchdog task does not receive the ’OK’ signal during a specified interval, the watchdog should infer that the system is overloaded, i.e. reached 100% utilisation, and it shall consequently issue an overload warning message. 
+    - Add another task to impose an extra load on the system. It shall be possible to dynamically adjust the amount of processing time that the task utilizes. To set the utilization, the switches SW4 to SW9 shall be used.
+    - The switch pattern shall be interpreted as a binary number (with SW4 as the lowest bit), i.e., 2^6 values can be represented. The utilization shall be adjustable in 2% steps. Everything higher than 100% (i.e., all numbers above 1)  shall be considered as 100% utilization. Hint: think about the system’s hyperperiod while interpreting the utilisation ratio “x%
+  
+```
+                ┌─────────┐
+                │         │
+                │         │
+                │         │
+                └─────────┘
+                     ▲                                   ┌────────────┐
+                     │                                   │            │
+                     │                                   │   Button   │
+                     │                                   │     IO     │
+                     │                                   │            │
+                     │                                   └────────────┘
+                ┌────┴────┐
+                │         │
+                │         │
+                │         │
+                └─────────┘
+    ┌────────────┐              ┌──────────┐             ┌────────────┐             ┌──────────────┐
+    │            │              │          │             │            │             │              │
+    │            │              │          │             │            │             │              │
+    │            │              │          │             │            │             │              │
+    │            │              │          │             │            │             │              │
+    └────────────┘              └──────────┘             └────────────┘             └──────────────┘
+```
+
+- Working experience
+GUI in C++
+
+OpenCL
+
+
+- TOF calibration
+
+
+
+# Machine Learning
+
+## IL2230
+
+## IL2232
+
+
+
+Working experience
 
