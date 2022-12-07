@@ -179,9 +179,12 @@ assume property is not assert property
 ### over-constrained environment
 unintentionally reduced state space bew legal and desired state space
 
-### COI =cone of influence
+COI =cone of influence
 
 ### JG Expert system
+
+
+## DFLA
 
 
 
