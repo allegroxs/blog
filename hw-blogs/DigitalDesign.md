@@ -145,7 +145,30 @@ FPGA
 
 
 # Courses and labs
+
+## IL2203 Hardware description languages
+It is a CISC, *with* a microcontroller ROM.
+1. ALU
+   1. Opcode
+2. Register File
+   1. Test: patterns like “1010101” followed by “0101010” also checks if the bits are leaking to their neighbors
+3. Datapath
+   1. Create a clock divider component. It should divide the 100 MHz clock on the board to an internal clock of approximately 1 Hz. The easiest way to achieve that is to make an incrementer (add 1), and use the MSB of it as the Clk output. 
+   2.  add-1 test
+4. FSM
+   1. a Program Counter and a bypass mux for jump/branch instructions. The Program counter is either part of the registers in the register file (typically the last one), but it can also be a separate PC register, external to the register file. In our case, we will not be incrementing the PC externally, but use the last register (reg 7 in our case) for the PC
+   2.  Microcontroller ROM for issuing microcode instructions
+5. cpu
+   1. Complete the *Microcontroller FSM* and add a R_Wn signal (or use two separate signals, RDEN and WREN) for controlling accesses to an external external memory. 
+   2. ROM.  We complete the *Microcontroller ROM* and include R/W_n signals to control reading/writing from/to external memories. Modelsim will convert your assembly program to hex-codes. Look on the RAM signal in the simulation window of Modelsim when you test the fake memory architecture, and write down the hex-codes in the memory.mif file. From now on, you should use the generated memory in your simulations so you get the memory latency right. 
+   1. We also build a *General Purpose IO* unit for writing data to LEDS, and write the *program (assembly code)* that should be stored in the external memory. We then build a *testbench* to run the system with the assembly code in it to test it
+   2. Finally, we download the Microcontroller component on the prototype FPGA board and verify that it works.
+
+
+
 ## IL2230 MLP
+The artificial neuron model is mathematically a weighted sum of inputs followed by a nonlinear transformation, as shown in Figure 2. Here the nonlinear function f can be in different forms such as the step function, sigmoid, hyperbolic tangent, ReLU etc. Despite its simplicity, neuron is the building block of neural networks. It is the “brick” of the deep learning “house”. Therefore, to design efficient hardware accelerator for neural networks, it is essential to understand the hardware design organizations and their tradeoffs of the basic unit, neuron
+
 1. Serial-semi-parallel neuron
    1. One-neuron design. Generic M × N MLP modeling (M layers, N neurons per layer) with one single neuron unit (M, N are generic parameters). The control path takes care of the repetitive computation using the single neuron to achieve the desired functionality of the neural network. This is one extreme case of fully serial implementation at the neuron level
    2. Semi neuron: N-neuron design. Generic M × N MLP modeling (M layers, N neurons per layer) with N neuron units (M, N are generic). This can be viewed as another extreme that uses a parallel architecture (as many per-layer neurons as needed). Still you need to consider how to re-use the one-layer neurons to implement the M layers of neuron computations
@@ -161,8 +184,19 @@ FPGA
        1.  Clock gate
        2.  Operand isolation
 
-synopsys_dc.setup
 
+## IL2225
+After doing the IL2230 lab, go on:
+Operating condition is NCCOM from tcbn90gtc, means: 
+
+Type | Voltage | Temperature | Process
+---|---|---|---
+Low Temperature(LTCOM) | VDD + 10% | -40oC | Fast-Fast
+Best Case(BCCOM) | VDD + 10% | 0oC | Fast-Fast
+Typical Case(NCCOM) | VDD | 25oC | Typical-Typical
+Worst Case(WCCOM) | VDD - 10% | 125oC | Slow-Slow
+
+synopsys_dc.setup
 ```shell
 set SynopsysHome /afs/ict.kth.se/pkg/synopsys/designcompiler/J-2014.09
 set search_path "/afs/ict.kth.se/pkg/synopsys/designcompiler/J-2014.09/libraries/syn\
@@ -187,29 +221,47 @@ set link_library      "* ${target_library}"
 define_design_lib WORK -path "./dc_work"
 ```
 
-## IL2203 Hardware description languages
-It is a CISC, *with* a microcontroller ROM.
-1. ALU
-   1. Opcode
-2. Register File
-   1. Test: patterns like “1010101” followed by “0101010” also checks if the bits are leaking to their neighbors
-3. Datapath
-   1. Create a clock divider component. It should divide the 100 MHz clock on the board to an internal clock of approximately 1 Hz. The easiest way to achieve that is to make an incrementer (add 1), and use the MSB of it as the Clk output. 
-   2.  add-1 test
-4. FSM
-   1. a Program Counter and a bypass mux for jump/branch instructions. The Program counter is either part of the registers in the register file (typically the last one), but it can also be a separate PC register, external to the register file. In our case, we will not be incrementing the PC externally, but use the last register (reg 7 in our case) for the PC
-   2.  Microcontroller ROM for issuing microcode instructions
-5. cpu
-   1. Complete the *Microcontroller FSM* and add a R_Wn signal (or use two separate signals, RDEN and WREN) for controlling accesses to an external external memory. 
-   2. ROM.  We complete the *Microcontroller ROM* and include R/W_n signals to control reading/writing from/to external memories. Modelsim will convert your assembly program to hex-codes. Look on the RAM signal in the simulation window of Modelsim when you test the fake memory architecture, and write down the hex-codes in the memory.mif file. From now on, you should use the generated memory in your simulations so you get the memory latency right. 
-   1. We also build a *General Purpose IO* unit for writing data to LEDS, and write the *program (assembly code)* that should be stored in the external memory. We then build a *testbench* to run the system with the assembly code in it to test it
-   2. Finally, we download the Microcontroller component on the prototype FPGA board and verify that it works.
+counstraint.sdc
+- set_units
+- create_clock period
+- set_false_path reset(false path?)
+- set_lead
 
-## IL2225
-After doing the IL2230 lab, go on:
+SDF
+This file will be used to back annotate the delays of the circuit in our gate-level simulation.
+
+DDC: saving the design after synthesis(*compile) 
+V: saving the gate level netlist
+
+WIRE LOAD MODEL & WIRE LOAD MODE
+http://www.vlsi-expert.com/2012/03/delay-wire-load-model-static-timing.html
+
+
+### Gate level simulation
+- Value Change Dump File (VCD File)  This VCD file will then be used to accurately estimate the power in our FIR Filte
+- Synopsys does not support VCD file format and instead supports Switching Activity Information Format. To use this technique in Synopsys, either we need to generate saif file or we can convert a VCD file into a saif format file 
+
+### Power saving
+1. Clock gating
+2. Operand Isolation
+
+### Hierarchal Bottom Up Synthesis
+
+### Physical Design
+Place and Route with Innovus
+- Floorplan
+- Power and ground routing
+- Placement of the design
+- Clock tree synthesis
+- Routing
+- Adding Filler cells and metal
+- GDS File export
+- Verilog netlist expor
+- Calculating and exporting delay
 
 
 # Embedded software
+
 # IL2206
 toy cruise control application using the DE2/DE-115 board.
 
@@ -285,7 +337,7 @@ OpenCL
 
 ## IL2230
 
-## IL2232
+## IL2233
 
 
 
