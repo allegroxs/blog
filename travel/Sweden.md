@@ -1,6 +1,8 @@
 # Stockholm
 
-## Saint Lucia day
+## Activities
+
+### Saint Lucia day
 2022.12.10 斯德歌尔摩大教堂的圣卢西亚音乐会
 
 斯德哥尔摩大教堂在王宫边上。大并且也算金碧辉煌，但是在整个欧洲，并不算特别大或者特别金碧辉煌。我们去的时候是修缮中，也无法说出外部的美丑。天黑以后正面会有神奇的灯光打在正门上方彩窗周围：就是很多白点，各种模式的运动。
@@ -15,4 +17,65 @@
 
 实际上的圣露西亚节应该是12月13日，也就是我写上述文字的时候。
 
-## Natural History Museum
+## Museums
+
+### 自然历史博物馆 Natural History Museum
+非常喜欢的一个免费博物馆。
+
+### 瓦萨沉船博物馆 Vasa Museum
+
+### 中世纪博物馆
+
+### 
+
+
+## Bibliotek
+
+### 斯德哥尔摩大学图书馆
+https://www.su.se/stockholms-universitetsbibliotek/
+
+地方很大，自习座位很多，而且人文社科类的英文书馆藏真的很丰富。
+
+### 斯德哥尔摩公共图书馆 Stockholms stadsbibliotek
+https://biblioteket.stockholm.se/
+或者叫市立图书馆。
+
+
+### 艺术图书馆
+https://kulturhusetstadsteatern.se/bibliotek/serieteket
+https://kulturhusetstadsteatern.se/english/libraries
+地理位置优越，玻璃落地窗正对斯德哥尔摩最繁华的市中心广场。
+几乎没有位置坐。
+有一块区域是漫画图书馆，有很多英译日漫。可以凭市立图书馆的借书证借书和影音盘。
+
+
+### 瑞典皇家图书馆
+极致奢华，对于图书馆爱好者来说甚至可以当成旅游目的地，对于远程办公仔来说就是高级工作间。
+
+
+### 瑞典皇家理工学院图书馆
+校区内的图书馆，原本的U型庭院中间增设了一些现代化的设施，还挺有意思。理工类的馆藏比较丰富，其他的就……没有什么优势了，感觉座位也不多，或者说座位不太够用，去了两次都没找到地方坐下，然后就没有然后了。
+
+
+
+### Solna
+
+
+### Bergshamra Bibliotek
+Kungshamra步行可到的一个好地方。
+地方非常小，在Bergshamra地铁站出来后，能看到Coop边上的另一个建筑就是。自习桌有六个位置，另外还有一些圆桌位置和沙发位置，如果办了卡就能每日刷卡进去。
+跟Solna图书馆是一个系统，感觉像分馆，可以预定Solna图书馆的书。
+
+
+### Danderyd
+https://bibliotek.danderyd.se/
+在地铁Molby Centrum站下车后直接往商城上面走，辗转一下就能找到。
+
+地方很宽敞，位置舒服，网络好。
+
+
+
+# Lund
+
+
+# Goterberg
