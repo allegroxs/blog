@@ -123,11 +123,131 @@ objet petit a = where singular plallic absence is revealed
 
 # 2. My Teaching, Its Nature and Its Ends
 
+// 一些单词  
+jargon 行话  
+unpretentious 朴实的 pretension 装腔作势的  
+quite a feat 壮举  
+expressly 明确地  
+exemplary 模范的  
+hubbub 尘嚣  
+folly 蠢事  
+spineless 没骨气  
+prodigious 惊人的
+appetite 食欲  
+colloquium, co-loquate, Ecrit 座谈会
 
+no intention of making critisms of society(which is always folly, and always.)
+// 也许是悲观， 也许是顺口一说
 
+人与动物的区别：尴尬
+> characterized bt extraordinary embarrassment he feels about  
 
+具体的一个表现为evacuation of shit。  
+在工业社会中，人根本感受不到粪便处理的存在，也没有大学为他开设一两门课。  
+这就是一种压抑现象：pheonominon of repression, bound up with decorum(礼仪) // 不知道在说哪种礼仪    
+所以文明的一种特征是它有废物处理系统。  
+Civilization's first and foremost point: waste-disposal system
+So, great civilication = pipes and sewers.  
+e.g., Babylon, Rome  
+But we are not proud of it?  
+> Culture is nolonger a privilage. Everithing recolves around the story/histoire of what happened to a certain gentleman
+
+思维的高贵？
+> why confer nobility on thinking: As I cogitate, agitate, rummage around, it only begins to be interesting when it takes responsibility or come up with solution, fomula, formalization...  
+> ...points of history is history of thoughts
+
+> Structuralism: culture trend is mix and homogenize
+
+No weltanschauungen:  没有所谓世界观的东西。
+
+Godel: even arithmetric turns out to be a basket(full of holes)  
+> holes in the button, lots of things escape from us.  
+> "Systems should not be contradictory." 
+... but the fact is, ... :)
+
+Stotle?: Organon
+
+Freud:  
+1. Dream: any audiens is dreaming or thinking about his own business.
+2. Fail
+3. Lauge
+
+Subject is not with subjective, not with individual,  
+it is a load of nonsense  
+it defines an effect of signifier, before it can be situated in 
+
+World -- Object = assume the existence of a subject
+e.g. Aristotle 对 Sphere的沉思，可以发现的是，没有一个不涉及沉思的sphere的观念。
+
+Science:
+- articulated chain 主体依赖于科学知识表述f出来的衔接链条，主体在其中定位自己，持续修正细微的直观表述。
+  > It is a wonder he hasn't been kicked out of the system.
+- intuitive categories
+the goal of system => the system fails! == the subject lasts
+如果我们感觉有地方可以下手、可以找到我们要处理的主体，那就是无意识。
+梦、失败与笑只在a perfectly articulated way.
+
+Goya:  
+The sleep of reason produces monsters. Reason encourages us to go on sleep
+
+Freud:  
+wo Es war, soll Ich werden
+> Subject already at the level of the Es  
+> In his second topography, perception-consciousness = das Ich   
+
+Lacan:  
+Communication funciton is never the most important aspect of a language.
+So subject is not a message.  
+> The subject of enunciationk != the subject of the utterance "I"(a shifter). Although linguists may call so.
+
+> try to construct a logic == try to eliminate the subject  
+> but you'll find it(subject) again when you get to the end in all shapes of paradoxes
+// 逻辑所在的地方没有主体性，合理化的尝试即是去主体化的尝试。但是你在那些符合逻辑的系统尽头的那些各种各样的悖论里面，你又会发现主体性。
+
+inter-subjectivity:  
+tragic，无关于the order of communication  
+主体间性与人与人的交流无关  
+因为以语言的形式被结构的无意识就是主体
+
+Hegel:  
+> dazzling briliance!  
+> something that negates we touch upon in dreams  
+> namely that substance is already the subjects, before it becomes sbj.
+
+Aristotle: difference between subject and substance  
+divorce, trauma :(
 
 
 
 # 3. So You Will Have Heard Lacan
- 
+
+// 一些单词  
+buoyancy 浮力  
+vulgarization 庸俗化
+
+// 大学是一个充斥了话语的世界  
+university: universe of discourse  
+not various stages of thoughts engender one another?  
+so is history the history of philosophy?
+
+Descartes:  
+universitas litterarum  
+
+e.g. animals **sick in the mind** vs **sick with plague**  
+here bacillus won't be ill in itself --> the thought in itself is not an illness  
+// 对于有心理疾病的人，就像被某种有病的想法所感染，但是看看那个想法本身，它并不是有病的，就像对病菌来说病菌自己并不是病态的。
+
+Philosophy tradition:  
+thought is self-transparent, isolated from "body" ( passion ... )  
+but Freud: go back to the level of relations with thoughts, brain-trusts
+> "It" thinks at a level where it cannot grasp itself is that it doesn't want to grasp itself at any price  
+> ... would rather reliquish itself than being thought.  
+> ... not at all willing to accept observations --> unconsciousness
+
+Q. Is conscioiusness itself the most imponderable but autonuomus? unconsciousness just a detail/inference like a mirage?  
+> *Thought* is not higher ... not a flower on top of evolution.   
+> 3 regesters
+> // 三界，它们的距离也是不均匀的，把它们放进一个列表里已是独断的
+- Symbolic 象征界
+- Imaginary 想象界
+- Real 实在界
