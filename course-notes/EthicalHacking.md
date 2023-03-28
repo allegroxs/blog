@@ -8,7 +8,7 @@ This is the review notes for the course named Ethical Hacking at KTH. I have alr
 1. Linux Kali: downloaded from official website.
 2. Cred: from Canvas.
 3. VPN: run a script and it will start OpenVPN service. Put it in the same directory as the cred files.
-4. Conflicts happen.  
+4. If conflicts happen:
 > Possible conflict between Kali Linux on Virtualbox and the course's network. This network by default will belong to the 10.0.2.0/24 subnet. This will conflict with the 10.0.0.0/20 range that we use in the course. To see if you have this issue, type `ip route` in a terminal and press enter.  
 Example of solution:
 ```
@@ -26,7 +26,7 @@ Metric的值越小，优先级越高。
 ————————————————  
 版权声明：本文为CSDN博主「谁还不是小白鼠」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。  
 原文链接：https://blog.csdn.net/memory6364/article/details/84826150
-
+<!-- 
 ```
 ┌──(kali㉿kali)-[~/Desktop]
 └─$ ip route                          
@@ -68,7 +68,7 @@ default via 10.0.2.2 dev eth0 proto dhcp src 10.0.2.15 metric 100
 10.0.2.0/24 dev eth0 proto kernel scope link src 10.0.2.15 metric 100 
 10.0.4.0/22 via 192.168.0.1 dev tun_ethhak **
 192.168.0.0/24 dev tun_ethhak proto kernel scope link src 192.168.0.7 
-```
+``` -->
 
 
 # Linux usage
