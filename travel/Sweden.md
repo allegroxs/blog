@@ -17,14 +17,21 @@
 
 实际上的圣露西亚节应该是12月13日，也就是我写上述文字的时候。
 
+### 斯德哥尔摩文化夜
+
+
+
 ## Museums
 
 ### 自然历史博物馆 Natural History Museum
-非常喜欢的一个免费博物馆。
+非常喜欢的一个免费博物馆。但是2023年初开始收费了，还不便宜。
 
 ### 瓦萨沉船博物馆 Vasa Museum
+主题博物馆，主题明确，内容比想象中丰富。
+
 
 ### 中世纪博物馆
+小型的免费博物馆。
 
 ### 
 
@@ -34,7 +41,7 @@
 ### 斯德哥尔摩大学图书馆
 https://www.su.se/stockholms-universitetsbibliotek/
 
-地方很大，自习座位很多，而且人文社科类的英文书馆藏真的很丰富。
+地方很大，自习座位很多，而且人文社科类的英文书馆藏真的很丰富，基本没有找不到的。小说相对少一点。
 
 ### 斯德哥尔摩公共图书馆 Stockholms stadsbibliotek
 https://biblioteket.stockholm.se/
@@ -62,16 +69,15 @@ https://kulturhusetstadsteatern.se/english/libraries
 
 
 ### Bergshamra Bibliotek
-Kungshamra步行可到的一个好地方。
-地方非常小，在Bergshamra地铁站出来后，能看到Coop边上的另一个建筑就是。自习桌有六个位置，另外还有一些圆桌位置和沙发位置，如果办了卡就能每日刷卡进去。
-跟Solna图书馆是一个系统，感觉像分馆，可以预定Solna图书馆的书。
+Kungshamra步行可到的一个好地方。地方非常小，在Bergshamra地铁站出来后，能看到Coop边上的另一个建筑就是。自习桌有六个位置，另外还有一些圆桌位置和沙发位置，如果办了卡就能每日刷卡进去。
+跟Solna图书馆是一个系统，类似于分馆，可以预定Solna图书馆的书。
 
 
 ### Danderyd
 https://bibliotek.danderyd.se/
 在地铁Molby Centrum站下车后直接往商城上面走，辗转一下就能找到。
 
-地方很宽敞，位置舒服，网络好。
+地方很宽敞，位置舒服，网络好，缺点是开放时间很短。
 
 
 
