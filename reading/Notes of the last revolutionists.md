@@ -30,6 +30,56 @@ Walter Ulbricht（1893）此时在莱比锡KPD活跃，父母都是SPD
 不算KPD建立者，当时USPD，1920.12才加入，只是提前就活跃在其活动中还关过一段时间
 
 - 斯巴达克斯起义  血腥五月
+- Levi
 Hermann Dunker 描写。
 
+Ulbricht：known as "Comarade Cell"，then work for Conmintern in Moscow, till 1924 to orga striks
+
+- KPD被共产国际选为德国的成员党，大量USPD人员加入KPD，包括上述两个
+
+1925 Stalin "open letter" against Fischer-Maslow
+
+Thalmann: Teddy   follow S
+
+Gerhart Eisler: MODERATE。sent  to China in 1929, 1931 return as a seasoned agent
+
+- 魏玛末期，kpd领导没什么犹太人了，以应对反犹主义？
+- kpd自己对犹太问题：NO INTERESTS
+
+温和派在实现主张上还是激进的，试图罢免台尔曼，被斯大林反推掉了
+
+Ruth Werner 有自传书和电影，关于Soviet Agent
+
+China: Kuomintang 
+
+
+Fritz Selbmann
+
+- 总体来说，KPD 20s女性领导者很少， 7/504。到了东德风格更加男性化。
+
+典型女性共产主义者如：Emmy Zaddach。尝试加入很多组织，1924 马列文本将她从安的蛋壳里解放出来。抱着婴儿卖册子
+
+Fred Oelssner：
+- 去俄罗斯，当时俄罗斯火车座位更宽，舒服，吃好睡好。
+- 对苏联成功非常理解。印象很好。苏联平民可以访问各种地方。鞋厂条件很好。
+
+
+Karl Schirdewan： KJVD
+
+Hainz Neumann：Beat the fascists wherever you meet them
+
+
+# Persecuted: At home and abroad after 1933
+
+1933-1945期间没有什么统一的反法西斯行动，因为很多人在监狱和集中营度过这段时间；另一方面还有几千人在苏联的大清洗中死去；更西方的西班牙内战也失败了。
+
+希特勒掌权后，警察立刻突击搜查了罗莎卢森堡学校。
+之后KPD分割了课程。Fred Oelssner需要在一个工人Pub的back room里面授课。看着学生被抓走，送到亚历山大广场登记后释放，被认为是莫斯科的间谍。
+
+台尔曼被逮捕，在集中营度过他接下来的11年。
+
+1933可能有十万党员被捕
+
+True to KPD traditions, the focus of their resistence was women's work
+    伪装成咖啡店里闲谈的主妇
 
