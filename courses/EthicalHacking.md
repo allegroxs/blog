@@ -3162,6 +3162,8 @@ kali自带暴力破解工具，直接命令行用上
   - -sS (TCP SYN扫描):SYN扫描作为默认的也是最受欢迎的扫描选项
   - -sT (TCP connect()扫描):当SYN扫描不能用时，CP Connect()扫描就是默认的TCP扫描。
   - -sU (UDP扫描):虽然互联网上很多流行的服务运行在TCP 协议上，UDP服务也不少。 DNS，SNMP，和DHCP (注册的端口是53，161/162，和67/68)是最常见的三个。
+  - -sP 扫描网段中有哪些主机在线，使用 -sP 参数，不扫描端口，只扫描「存活主机」。本质上是Ping扫描，能Ping通有回包，就判定主机在线
+
 cheatsheet
 https://www.stationx.net/nmap-cheat-sheet/
 https://highon.coffee/blog/nmap-cheat-sheet/
