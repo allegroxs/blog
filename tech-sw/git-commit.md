@@ -1,0 +1,2 @@
+SOFT模式只做HEAD指针的重置。它不会重置index file和working tree，这意味着将保留文件的修改。
+而HARD模式将重置index file和working tree
