@@ -1,16 +1,14 @@
-# 烟之城
 
-# 脱落的指甲与烟之城
-魏玛时代
-On 4 January, the Berlin provisional government ordered the dismissal of Emil Eichhorn, the commissary police chief of Berlin, a left-wing Independent who had refused to support the government during the ‘Christmas Battles’. Eichhorn refused to resign, choosing instead to distribute arms from the police arsenal to left-radical troops and to barricade himself in the police presidency.
-1918年革命期间
-此前普在警察局做个普通小警察。他的长官因为是左翼人士被罢职，把武器分发给了左翼分子并拒绝辞职，也给了普。普说不用，我有枪。局长说他没有能力左右基尔伯特的选择。随后基尔伯特与派来镇压的军队中的路德维希会和：
-In their eyes, the Social Democrats had betrayed the German worker to sign a ‘devil’s pact’ with Prussian militarism.22 --Annemarie Lange, Berlin in der Weimarer Republik (Berlin/GDR, 1987), pp. 47, 198–9.
-随后的普鲁士政府却成了民主的基石和魏玛稳定的堡垒，稳步改良。——但是这样的改良在普鲁士的大部分地区 尤其是司法系统 没有很好地落实··    
+# 灰与烟之城
 
+# Before
+
+比起说是为cp产粮更像是一份携带私货的活儿。
+普视角的柏林三幕。
 
 ## 大纲
 
+### 1.
 - 19世纪一家三口座谈（误）
 普：你梦见过指甲脱落吗？指甲自己掉下来，就像拔下来一样痛。
 露：真惊讶，我以为只有我会做这样的梦。原来所有意识体都会。我还问过英国先生，他说既然是共性那应该是什么隐喻吧。
@@ -21,7 +19,7 @@ In their eyes, the Social Democrats had betrayed the German worker to sign a ‘
 独：点头。
 
 - 闪回，现在：1918革命
-基尔伯特的枪掉在了地上，
+基尔伯特放下了枪。或者说他失去了举枪的力气，那把枪掉在了地上，
 上司大骂：“为什么不开枪？！”
 独：“哥哥你没事吧”
 普：“我只是……”（鲜血直流的手，指甲崩开了，）说不出疼痛
@@ -31,6 +29,16 @@ In their eyes, the Social Democrats had betrayed the German worker to sign a ‘
 普：没事，只是……没想到这么痛。
 （痛感消失了）
 
+
+魏玛时代
+On 4 January, the Berlin provisional government ordered the dismissal of Emil Eichhorn, the commissary police chief of Berlin, a left-wing Independent who had refused to support the government during the ‘Christmas Battles’. Eichhorn refused to resign, choosing instead to distribute arms from the police arsenal to left-radical troops and to barricade himself in the police presidency.
+1918年革命期间
+此前普在警察局做个普通小警察。他的长官因为是左翼人士被罢职，把武器分发给了左翼分子并拒绝辞职，也给了普。普说不用，我有枪。局长说他没有能力左右基尔伯特的选择。随后基尔伯特与派来镇压的军队中的路德维希会和：
+In their eyes, the Social Democrats had betrayed the German worker to sign a ‘devil’s pact’ with Prussian militarism.22 --Annemarie Lange, Berlin in der Weimarer Republik (Berlin/GDR, 1987), pp. 47, 198–9.
+随后的普鲁士政府却成了民主的基石和魏玛稳定的堡垒，稳步改良。——但是这样的改良在普鲁士的大部分地区 尤其是司法系统 没有很好地落实··    
+
+
+### 2.
 - 闪回，签订互不条约以后
 普：我有个问题很久以前就想问了……
 露：我喜欢你哦，基尔伯特。是真的。
@@ -69,9 +77,9 @@ In their eyes, the Social Democrats had betrayed the German worker to sign a ‘
 普：不了，谢谢。
 露：如果想知道你的心脏能不能被杀死就来找我吧，这个机会不要给给任何人哦。你那里应该是腐烂的，黑色的？没关系，会有鲜红的长出来。
 
-露：动荡的时候肚子会痛，经济低迷的时候会发烧，战争时期却充满了力量，我们的身体真是神奇呢。所以其中最乐于战斗的你才会那么让人无法移开目光吧。
+露：动荡的时候肚子会痛，经济低迷的时候会发烧，战争时期却充满了力量，我们的身体真是神奇呢。所以，最乐于战斗的你，总是那么……让人无法移开目光。
 普：我们的身体真是讽刺。
-那你知道指甲脱落的意思了吗？
+露：那你知道指甲脱落的意思了吗？
 
 - 二战
 柏林，基尔伯特碰到了伊万。
@@ -80,7 +88,7 @@ In their eyes, the Social Democrats had betrayed the German worker to sign a ‘
 基尔伯特放下了枪。
 
 
-- 
+### 3.
 基尔伯特放下了枪。刚才的两发子弹没有射中那两个翻墙的平民。
 旁边的卫兵不知道说什么。
 基尔伯特确认自己的指甲。
